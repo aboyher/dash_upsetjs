@@ -1,0 +1,137 @@
+{
+  "src/lib/components/UpsetJS.react.js": {
+    "description": "ExampleComponent is an example component.\r\nIt takes a property, `label`, and\r\ndisplays it.\r\nIt renders an input with the property `value`\r\nwhich is editable by the user.",
+    "displayName": "UpsetJS",
+    "methods": [
+      {
+        "name": "setSelection",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "selection",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "renderPlot",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "up",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "data": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "name": {
+                "name": "string",
+                "required": true
+              },
+              "sets": {
+                "name": "arrayOf",
+                "value": {
+                  "name": "string"
+                },
+                "required": true
+              }
+            }
+          }
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "selection": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "width": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "800",
+          "computed": false
+        }
+      },
+      "height": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "500",
+          "computed": false
+        }
+      },
+      "title": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "\"light\"",
+          "computed": false
+        }
+      },
+      "interaction": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "\"hover\"",
+          "computed": false
+        }
+      }
+    }
+  }
+}

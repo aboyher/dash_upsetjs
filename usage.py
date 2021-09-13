@@ -29,10 +29,11 @@ app.layout = html.Div([
         id="color-radio",
         value="light",
     ),
-    dash_upsetjs.dash_upsetjs(
+    dash_upsetjs.UpsetJS(
         id='upset',
         data=data,
-        title="Test Upset"
+        title="Test Upset",
+        interaction="select"
     ),
     html.H1(id="output")
 ])

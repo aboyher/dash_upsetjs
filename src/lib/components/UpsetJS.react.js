@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import UpSetJS, {extractCombinations} from '@upsetjs/react';
+import UpSetJS, { extractCombinations } from '@upsetjs/react';
 
 /**
  * ExampleComponent is an example component.
@@ -10,7 +10,7 @@ import UpSetJS, {extractCombinations} from '@upsetjs/react';
  * which is editable by the user.
  */
 export default class UpsetJS extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             selection: null,
@@ -24,7 +24,7 @@ export default class UpsetJS extends Component {
 
     setSelection(selection) {
         console.log(selection)
-        
+
         this.setState({
             selection: selection
         })
@@ -34,7 +34,7 @@ export default class UpsetJS extends Component {
     }
 
     componentDidMount() {
-        if (this.props.selection){
+        if (this.props.selection) {
             this.setState({
                 selection: this.props.selection
             });
@@ -49,23 +49,41 @@ export default class UpsetJS extends Component {
     }
 
     render() {
-        const {id, data, height, width, title, theme} = this.props;
-        const {sets, combinations} = extractCombinations(data);
-        return (
-            <div id={id}>
-                <UpSetJS 
-                    sets={sets} 
-                    combinations={combinations}  
-                    selection={this.state.selection} 
-                    // onHover={this.setSelection} 
-                    onClick={this.setSelection}
-                    width={width}
-                    height={height}
-                    title={title}
-                    theme={theme}
-                />
-            </div>
-        );
+        const { id, data, height, width, title, theme, interaction } = this.props;
+        const { sets, combinations } = extractCombinations(data);
+        if (interaction === "hover") {
+            return (
+                <div id={id}>
+                    <UpSetJS
+                        sets={sets}
+                        combinations={combinations}
+                        selection={this.state.selection}
+                        onHover={this.setSelection}
+                        // onClick={this.setSelection}
+                        width={width}
+                        height={height}
+                        title={title}
+                        theme={theme}
+                    />
+                </div>
+            );
+        } else {
+            return (
+                <div id={id}>
+                    <UpSetJS
+                        sets={sets}
+                        combinations={combinations}
+                        selection={this.state.selection}
+                        // onHover={this.setSelection} 
+                        onClick={this.setSelection}
+                        width={width}
+                        height={height}
+                        title={title}
+                        theme={theme}
+                    />
+                </div>
+            );
+        }
     }
 
 
@@ -87,11 +105,12 @@ export default class UpsetJS extends Component {
 }
 
 UpsetJS.defaultProps = {
-    width:800,
-    height:500,
+    width: 800,
+    height: 500,
     title: null,
     data: [],
-    theme: "light"
+    theme: "light",
+    interaction: "hover"
 };
 
 UpsetJS.propTypes = {
@@ -106,8 +125,9 @@ UpsetJS.propTypes = {
     ),
     selection: PropTypes.object,
     setProps: PropTypes.func,
-    width:PropTypes.number,
-    height:PropTypes.number,
-    title:PropTypes.string,
-    theme:PropTypes.string,
+    width: PropTypes.number,
+    height: PropTypes.number,
+    title: PropTypes.string,
+    theme: PropTypes.string,
+    interaction: PropTypes.string,
 };
