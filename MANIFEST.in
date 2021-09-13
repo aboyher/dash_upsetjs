@@ -1,0 +1,11 @@
+include dash_upsetjs/dash_upsetjs.min.js
+include dash_upsetjs/dash_upsetjs.min.js.map
+include dash_upsetjs/async-*.js
+include dash_upsetjs/async-*.js.map
+include dash_upsetjs/*-shared.js
+include dash_upsetjs/*-shared.js.map
+include dash_upsetjs/metadata.json
+include dash_upsetjs/package-info.json
+include README.md
+include LICENSE
+include package.json
