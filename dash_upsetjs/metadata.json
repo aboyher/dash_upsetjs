@@ -131,6 +131,28 @@
           "value": "\"hover\"",
           "computed": false
         }
+      },
+      "setName": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "\"\"",
+          "computed": false
+        }
+      },
+      "setLabelSize": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "\"10px\"",
+          "computed": false
+        }
       }
     }
   }

@@ -20,12 +20,14 @@ Those elements have the following types:
 - `height` (Real; optional)
 - `interaction` (String; optional)
 - `selection` (Dict; optional)
+- `setLabelSize` (String; optional)
+- `setName` (String; optional)
 - `theme` (String; optional)
 - `title` (String; optional)
 - `width` (Real; optional)
 """
 function ''_upsetjs(; kwargs...)
-        available_props = Symbol[:id, :data, :height, :interaction, :selection, :theme, :title, :width]
+        available_props = Symbol[:id, :data, :height, :interaction, :selection, :setLabelSize, :setName, :theme, :title, :width]
         wild_props = Symbol[]
         return Component("''_upsetjs", "UpsetJS", "dash_upsetjs", available_props, wild_props; kwargs...)
 end

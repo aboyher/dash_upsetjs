@@ -11,7 +11,8 @@ ExampleComponent is an example component. It takes a property, `label`, and di
 
 \usage{
 ''UpsetJS(id=NULL, data=NULL, height=NULL, interaction=NULL,
-selection=NULL, theme=NULL, title=NULL, width=NULL)
+selection=NULL, setLabelSize=NULL, setName=NULL, theme=NULL,
+title=NULL, width=NULL)
 }
 
 \arguments{
@@ -27,6 +28,10 @@ those elements have the following types:
 \item{interaction}{Character. }
 
 \item{selection}{Named list. }
+
+\item{setLabelSize}{Character. }
+
+\item{setName}{Character. }
 
 \item{theme}{Character. }
 

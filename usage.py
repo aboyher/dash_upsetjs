@@ -33,7 +33,9 @@ app.layout = html.Div([
         id='upset',
         data=data,
         title="Test Upset",
-        interaction="select"
+        interaction="select",
+        setName="Keywords",
+        setLabelSize="10px"
     ),
     html.H1(id="output")
 ])

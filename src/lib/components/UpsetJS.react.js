@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import UpSetJS, { extractCombinations } from '@upsetjs/react';
 
@@ -49,7 +49,11 @@ export default class UpsetJS extends Component {
     }
 
     render() {
-        const { id, data, height, width, title, theme, interaction } = this.props;
+        
+        
+
+
+        const { id, data, height, width, title, theme, interaction, setLabelSize, setName} = this.props;
         const { sets, combinations } = extractCombinations(data);
         if (interaction === "hover") {
             return (
@@ -64,6 +68,8 @@ export default class UpsetJS extends Component {
                         height={height}
                         title={title}
                         theme={theme}
+                        setName={setName}
+                        fontSizes={{"setLabel":setLabelSize}}
                     />
                 </div>
             );
@@ -80,6 +86,8 @@ export default class UpsetJS extends Component {
                         height={height}
                         title={title}
                         theme={theme}
+                        setName= {setName}
+                        fontSizes={{"setLabel":setLabelSize}}
                     />
                 </div>
             );
@@ -110,7 +118,9 @@ UpsetJS.defaultProps = {
     title: null,
     data: [],
     theme: "light",
-    interaction: "hover"
+    interaction: "hover",
+    setLabelSize: "10px",
+    setName: ""
 };
 
 UpsetJS.propTypes = {
@@ -130,4 +140,6 @@ UpsetJS.propTypes = {
     title: PropTypes.string,
     theme: PropTypes.string,
     interaction: PropTypes.string,
+    setName: PropTypes.string,
+    setLabelSize: PropTypes.string,
 };
