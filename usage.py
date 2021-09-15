@@ -31,7 +31,6 @@ app.layout = html.Div([
     ),
     dash_upsetjs.UpsetJS(
         id='upset',
-        data=data,
         title="Test Upset",
         interaction="select",
         setName="Keywords",
