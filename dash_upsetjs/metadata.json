@@ -34,7 +34,7 @@
           "name": "string"
         },
         "required": false,
-        "description": ""
+        "description": "id for dash component"
       },
       "data": {
         "type": {
@@ -57,7 +57,7 @@
           }
         },
         "required": false,
-        "description": "",
+        "description": "data. An array of dictionaries with keys name and sets, where name is a string and sets is a list. Example:\r\ndf = pd.DataFrame(data={'name': [1,2], 'sets': [3,4]})\r\ndata = df.to_dict('records')",
         "defaultValue": {
           "value": "[]",
           "computed": false
@@ -68,21 +68,21 @@
           "name": "object"
         },
         "required": false,
-        "description": ""
+        "description": "prop for hovering or selecting from the upsetplot"
       },
       "setProps": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "function to change props to send back to dash"
       },
       "width": {
         "type": {
           "name": "number"
         },
         "required": false,
-        "description": "",
+        "description": "width of the div wrapper",
         "defaultValue": {
           "value": "800",
           "computed": false
@@ -93,7 +93,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "",
+        "description": "height of the div wrapper",
         "defaultValue": {
           "value": "500",
           "computed": false
@@ -104,7 +104,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "title of the upset plot",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -115,7 +115,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "built in theme for the upset plot, options are dark, light, vega",
         "defaultValue": {
           "value": "\"light\"",
           "computed": false
@@ -126,7 +126,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "toggle for switching between click and hover events. there might be a way to hover and click at the same time, but i don't know how yet",
         "defaultValue": {
           "value": "\"hover\"",
           "computed": false
@@ -137,9 +137,9 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "axis label for sets",
         "defaultValue": {
-          "value": "\"\"",
+          "value": "\"Intersection Size\"",
           "computed": false
         }
       },
@@ -148,11 +148,28 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "font size for set names",
         "defaultValue": {
           "value": "\"10px\"",
           "computed": false
         }
+      },
+      "combinationName": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "axis label for combinations"
+      },
+      "colors": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "Set and combination colors. \r\nLength does not have to match sets or combinations(intersections). \r\nIf shorter than sets or combinations it will loop.\r\nColors are added after sorting, So largest set/intersection will get the first color.\r\n Must be a list of html/css interpretable values. \r\nFor example:\r\n ['rgb(121, 130, 52)','rgb(163, 173, 98)','rgb(208, 211, 162)']  \r\nor\r\n ['#66c2a5', '#fc8d62', '#8da0cb']"
       }
     }
   }
